@@ -75,6 +75,40 @@ The system exports data to CSV files:
 - `ranking.csv` - Final tournament standings
 - `jogadores.csv` - Player statistics
 
+## Roadmap / Future Improvements
+
+### Architecture & Design
+- [ ] Split code into multiple files (`.h` and `.cpp` per class)
+- [ ] Use smart pointers (`unique_ptr`, `shared_ptr`) instead of value objects
+- [ ] Add abstract interface for different tournament types
+
+### Missing Features
+- [ ] Interactive menu system (currently runs a fixed flow)
+- [ ] Load saved data (only save exists, no load function)
+- [ ] Input validation (negative age, empty names, etc.)
+- [ ] Automatic scoring system (ranking is filled manually, should calculate from matches)
+
+### Bugs & Issues
+- [ ] Add missing `#include <sstream>` (used by `Jogador::carregar()`)
+- [ ] Matches don't update player stats (simulate doesn't register wins/losses)
+- [ ] Knockout mode not implemented (only round-robin works)
+
+### Best Practices
+- [ ] Use `const` correctly (methods like `exibir()` should be `const`)
+- [ ] Avoid `using namespace std` (namespace pollution)
+- [ ] Add error handling (file operations can fail silently)
+- [ ] Improve encapsulation with proper getters/setters
+
+### New Features
+- [ ] Match history - Save all played matches
+- [ ] Advanced statistics - Goals scored/conceded, point averages
+- [ ] Player elimination - For knockout tournaments
+- [ ] Seeding/draw - Shuffle participants before generating rounds
+
+## Contributing
+
+Contributions are welcome! Feel free to pick any item from the roadmap and submit a pull request.
+
 ## License
 
 This project is open source and available for educational purposes.
